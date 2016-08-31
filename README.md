@@ -59,7 +59,7 @@ Example of the previous file classified:
 
 1@#@1@#@0.89-0.11@#@ML@#@0
 
-## Configuration files:
+## Configuration files
 The configuration files are under the directory Parameters. For each modality (*Bing*, *Hunalign*, *Fastalign*) you will find a directory with the configuration files for training (“p-Training-XXX.txt”) and testing (“p-Batch-XXX.txt”). The parameters are commented in each file on lines starting with the symbol “#”. 
 
 ## What Next
