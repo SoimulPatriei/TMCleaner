@@ -16,16 +16,16 @@ The software you need before downloading TM Cleaner is:
 * Python 2.7.x or higher.
 * Java 8 or higher.
 * Scikit-learn 0.17.x or higher.
-* To work with *Bing* Translation engine you need an application identifier provided by Bing. For details see the tutorial on working with Bing Translation Engine under Documentation folder.
-* If you want to work with *Hunalign* sentence aligner you need to download and install Hunalign. For details see the tutorial on working with Hunalign sentence aligner under Documentation folder.
-7.	If you want to work with *Fastalign* word aligner you need to download and install *MMT (Modern Machine Translation)* java application. For details see the tutorial on working with Fastalign word aligner under Documentation folder.
+* To work with *Bing* Translation engine you need an application identifier provided by Bing. For details see the tutorial [Bing](Documentation/Tutorial-Bing.pdf)  under Documentation folder.
+* If you want to work with *Hunalign* sentence aligner you need to download and install Hunalign. For details see the tutorial on working with Hunalign sentence aligner [Hunalign](Documentation/Tutorial-Hunalign.pdf) under Documentation folder.
+7.	If you want to work with *Fastalign* word aligner you need to download and install *MMT (Modern Machine Translation)* java application. For details see the tutorial on working with [Fastalign](Documentation/Tutorial-Fastalign.pdf) word aligner under Documentation folder.
 
 ## Additional software used
 For language identification we use *Cybozu* [https://github.com/shuyo/language-detection/blob/wiki/ProjectHome.md] language identifier. The language identifier is used through a java program that is called from the main script. We have bundled with this distribution the language profiles used by Cybozu. 
 
 In Fastalign modality we use a java program that merges the backward and forward alignments. Like Cybozu, this program is called from the main python script and is provided with this distribution.
 
-## Input files and training file.
+## Input files and training file
 All input files should be placed in a directory  and should be in utf-8 format. Each file is composed of a number of lines separated by the end of line character (“\n”). Each line should have the following mandatory fields separated by “@#@”:
  1.  Identifier_1 = it starts with 0 and is incremented for each line
  2.	Identifier_2= in the example this field is the copy of the previous one. However the user can put whatever information s/he wants (for example a database id)
@@ -41,7 +41,7 @@ Example of a small file for English Italian language-pair:
 
 
 
-## Output file.
+## Output file
 The output will be created in a directory called “Classified” inside the input directory. 
 
 WARNING: at the next run the directory Classified will be deleted and recreated. Therefore, after a run, move the classified files somewhere else.
@@ -52,7 +52,6 @@ The format of the output file is the following:
   3.	For some algorithms like Logistic Regression we can output the probabilities for the classes 0 and 1
   4.	The rule that decided the output (“ML” stays for machine learning)
   5.	The inferred category (0 or 1)
-  6.	
   
 Example of the previous file classified:
 
@@ -65,7 +64,7 @@ The configuration files are under the directory Parameters. For each modality (*
 
 ## What Next
 To see how to run the software in each modality read the corresponding tutorials in the Documentation directory.
-This introductory instructions are also available in ...
+This introductory instructions are also available in [General Documentation](Documentation/General%20Documentation.pdf) 
 
 ## Acknowledgments 
 The development of this tool has been supported by the People Programme (Marie Curie Actions) of the European Unions Framework Programme (FP7/2007-2013) under REA grant agreement no. 317471.
