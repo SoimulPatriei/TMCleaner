@@ -1,0 +1,4 @@
+#-------General Parameters for the Tokenizer----------
+mmt.home	/fs/bragi0/eduard/MMT/mmt
+tok.class	eu.modernmt.cli.PreprocessorMain
+tok.flags	--no-tags --print-placeholders

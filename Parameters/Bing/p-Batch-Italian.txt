@@ -1,0 +1,60 @@
+#Source and Target segment languages
+sourceLanguage	en
+targetLanguage	it
+
+#---------------The directory where the files to be classified stay---------------
+dirTest	TestFiles
+
+#--------The Trained Model---------------------
+trainingFeatureFile	Training/Bing/full-English-Italian-Features.csv
+
+
+#You want Bing translation
+translation	yes
+
+#--------Classification Parameters--------
+
+# The Church Gale Threshold that decides if two segments are or not translations
+cgThreshold	3.0
+
+#Do not touch these
+featuresEliminate	dbkey,category,nwordssource,nwordstarget
+category	category
+
+#Scale the features in a certain range for example :-1,1.
+#Incompatible with variance scaling. One can be True But Not Both
+scaleToRange	0
+range	-1,1
+
+#From my experience Variance Scaling is better than scaleToRange for scaling the features
+#If you want to use scaling to range fix that parameter to 1 and varianceScaling to 0
+varianceScaling	1
+
+#The java resources needed for Cybozu Based Language Identification
+javaClassPath	Resources/idLanguage.jar
+javaClass	test.translated.net.TestDetectQueryLanguage
+
+
+#The directory where the language profiles for Cybozu are stored
+#Nota bene: for the tutorial we use the language profiles trained on Tweeter so that the short segments 
+#language codes are identified accurately
+langProfileDirectory	Resources/profiles.sm
+
+
+#A file containing regular expressions used to compute various features.
+fileRe	Resources/regularExpressions.txt
+
+
+#-------------------------------------------------------
+#When the classification algorithm  outputs probabilities for classes (like Logistic Regression for example)
+#this parameters help guessing the category.
+#In this case (defaultClass 0 and threshold 0.7) we return 1 when the probability computed for the positive class 
+#is greater than threshold and 0 otherwise.
+#-------------------------------------------------------
+defaultClass	0
+threshold	0.70
+
+
+
+
+

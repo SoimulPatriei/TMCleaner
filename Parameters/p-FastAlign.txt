@@ -1,0 +1,8 @@
+
+#The path for fastalign. You should modify this to point to your installation.
+fa.path	/fs/bragi0/eduard/Aligners/FastAlign/WordAligner/build/bin/fast_align
+
+#The flags for forward and backward alignment to be passed to fastalign by the script. 
+fa.flags.forward	-d -v -o -B
+fa.flags.backward	-r -d -v -o -B
+

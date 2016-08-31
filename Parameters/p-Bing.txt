@@ -1,0 +1,4 @@
+#------------Here you add your Bing Parameters ------------------
+
+bingAPI	http://api.microsofttranslator.com/V2/Http.svc/Translate?
+key	appId=

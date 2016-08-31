@@ -1,0 +1,4 @@
+1    [main] DEBUG test.translated.net.TestDetectQueryLanguage  - Init the profile directory
+1520 [main] DEBUG test.translated.net.TestDetectQueryLanguage  - Detect the languages for file:TestFiles/sample-en-fr.txt
+1949 [main] DEBUG test.translated.net.TestDetectQueryLanguage  - Number of Empty destination queries:0
+1949 [main] DEBUG test.translated.net.TestDetectQueryLanguage  - Finish Detection

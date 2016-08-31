@@ -1,0 +1,5 @@
+#The path to your Hunalign installation
+fileProgram	/fs/bragi0/eduard/Aligners/hunalign-1.1/src/hunalign/hunalign
+
+#The path to the bilingual dictionary to be used by Hunalign
+fileDictionary	Resources/Dictionaries/English-French.dic
