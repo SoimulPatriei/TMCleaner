@@ -226,22 +226,11 @@ class GetFeatures:
     logger.info ("Store Model File  : "+self.pDict["trainingFeatureFile"])
     self.writeFeatureFile (self.pDict["trainingFeatureFile"],segmentFeaturesDict)
    
-   def readParameters (self,fileParameters) :
-    """Read the training or test parameters"""
-    
-    fp = codecs.open(fileParameters, "r", "utf-8")
-    pDict={}
-    for lineSegment in fp:
-        lineSegment=lineSegment.rstrip()
-        if re.search ("\t",lineSegment) :
-            argument,value=lineSegment.split("\t")
-            pDict[argument]=value
-    return pDict
    
    def __init__(self,pTrainingFile=None):
       self.pTrainingFile = pTrainingFile
       if pTrainingFile :
-        self.pDict=self.readParameters(self.pTrainingFile)
+        self.pDict=Parameters.readParameters(self.pTrainingFile)
      
    
    

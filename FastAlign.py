@@ -9,24 +9,13 @@ import codecs
 import collections
 import re
 from subprocess import call
+import Parameters
 
 
 class FastAlign:
    """Train a Fastalign model and use the model to obtain the alignments."""
    
    pFile="Parameters/p-FastAlign.txt"
-   
-   def readParameters (self,pFile) :
-    """Read tokenization parameters"""
-    
-    fp = codecs.open(pFile, "r", "utf-8")
-    pDict={}
-    for lineSegment in fp:
-        lineSegment=lineSegment.rstrip()
-        if re.search ("\t",lineSegment) :
-            argument,value=lineSegment.split("\t")
-            pDict[argument]=value
-    return pDict
    
    
    def train(self,direction):
@@ -50,7 +39,7 @@ class FastAlign:
     
     
    def __init__(self, tokFile,modelFile,alignFile=None):
-      self.pDict = self.readParameters(FastAlign.pFile)
+      self.pDict = Parameters.readParameters(FastAlign.pFile)
       self.tokFile = tokFile
       self.alignFile= alignFile
       self.modelFile=modelFile

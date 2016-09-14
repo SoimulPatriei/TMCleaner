@@ -21,16 +21,8 @@ import os
 from Tokenizer import Tokenizer
 from FastAlign import FastAlign
 from WordMappings import *
+import Parameters
 
-def readParameters (fileParameters) :
-    fp = codecs.open(fileParameters, "r", "utf-8")
-    pDict={}
-    for lineSegment in fp:
-        lineSegment=lineSegment.rstrip()
-        if re.search ("\t",lineSegment) :
-            argument,value=lineSegment.split("\t")
-            pDict[argument]=value
-    return pDict
 
 
 class FeaturesFastAlign:

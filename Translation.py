@@ -21,6 +21,7 @@ import string
 from collections import Counter
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import Parameters
 
 class Translate:
    """Use a Machine Translation engine to translate the source segment
@@ -34,18 +35,6 @@ class Translate:
     self.tLanguage=tLanguage
     
    
-   def readParameters (self,fParameters) :
-    """Read a parameter file"""
-    
-    fp = codecs.open(fParameters, "r", "utf-8")
-    pDict={}
-    for lineSegment in fp:
-        lineSegment=lineSegment.rstrip()
-        if re.search ("\t",lineSegment) :
-            argument,value=lineSegment.split("\t")
-            pDict[argument]=value
-    return pDict
-
    def removePunctuation (self,segment) :
     """It removes the punctuation from a segment.
      In this way increases the probability of good similarity match."""
@@ -153,7 +142,7 @@ class Translate:
     "Get the source Segment translation using BING API"
     
     fBing="Parameters/p-Bing.txt"
-    pDict=self.readParameters(fBing)
+    pDict=Parameters.readParameters(fBing)
     try :
         sSegment=urllib.quote(sSegment.encode("utf-8"))
         parameters="&from="+self.sLanguage+"&to="+self.tLanguage+"&text="+sSegment

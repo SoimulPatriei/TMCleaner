@@ -10,19 +10,7 @@ import collections
 import re
 from subprocess import call
 from os.path import split ,join
-
-
-def readParameters (fileParameters) :
-    """Read the training or test parameters"""
-    
-    fp = codecs.open(fileParameters, "r", "utf-8")
-    pDict={}
-    for lineSegment in fp:
-        lineSegment=lineSegment.rstrip()
-        if re.search ("\t",lineSegment) :
-            argument,value=lineSegment.split("\t")
-            pDict[argument]=value
-    return pDict
+import Parameters
 
 
 class HunAlign:
@@ -30,15 +18,6 @@ class HunAlign:
    
    fHunParameters="Parameters/p-HunAlign.txt"
    
-   def readParameters (self) :
-    fp = codecs.open(self.fHunParameters, "r", "utf-8")
-    pHunDict={}
-    for lineQuery in fp:
-        lineQuery=lineQuery.rstrip()
-        if re.search ("\t",lineQuery) :
-            argument,value=lineQuery.split("\t")
-            pHunDict[argument]=value
-    return pHunDict
    
    def getAlignerFiles(self):
     """Get the Aligner Input Files: Source File and Target File."""
@@ -58,7 +37,7 @@ class HunAlign:
     
     """Perform the Sentence Alignment with HunAlign"""
     
-    pHunDict=self.readParameters ()
+    pHunDict=Parameters.readParameters ()
     pHunDict['fileS'],pHunDict['fileT'],self.pDict['fAlignment']=self.getAlignerFiles()
     self.pDict['fAlignment']=self.getFAPath(pHunDict)
     
@@ -141,7 +120,7 @@ class HunAlign:
     
 def main():
    
-    pDict=readParameters("Parameters/p-Training.txt")
+    pDict=Parameters.readParameters("Parameters/p-Training.txt")
     pDict["segmentsFile"]="Training/full-English-Italian-Category-segments.txt"
     
     ha=HunAlign(pDict)

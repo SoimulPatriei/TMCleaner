@@ -22,6 +22,7 @@ import argparse
 from GetFeatures import *
 from Rules import *
 from Classification import *
+import Parameters
 
 
 
@@ -235,7 +236,7 @@ def classifyInBatch(fPBatch,withRules,mlalgorithm):
     """Classify the files found in directory in one by one.
        It can be specified if you use the extra rules or not. """
     
-    pBatch=readParameters (fPBatch)
+    pBatch=Parameters.readParameters (fPBatch)
     makeDirectories(pBatch)
     
     testFPath = [ join(pBatch["dirTest"],curFile) for curFile in listdir(pBatch["dirTest"]) if isfile(join(pBatch["dirTest"],curFile)) and curFile.endswith(".txt")]

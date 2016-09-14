@@ -13,6 +13,7 @@ import numpy as np
 from collections import OrderedDict
 import produceHTMLFormat as ph
 from os.path import split,join
+import argparse
 
 
 class Evaluate():
@@ -142,16 +143,25 @@ class Evaluate():
       self.fMiss=join(path,"miss-sample.txt")
       self.fHTML=join(path,"visualize-sample.html")
           
+    
+def executeProgram():
+        """Parse the arguments of the program using argparse and execute the program"""
+        
+        parser = argparse.ArgumentParser(description='Evaluate the results using a manually annotated file')
+        parser.add_argument("--classified",type=str, help="The classified file")
+        parser.add_argument("--annotated",type=str, help="The annotated file")
+        
+        args = parser.parse_args()
+        print ("Evaluate...")
+        ev=Evaluate(args.classified,args.annotated)
+        ev.evaluate()
+        print "End Results Evaluation ..."
         
 def main():
     
-    fClassified=sys.argv[1]
-    fManual=sys.argv[2]
+    executeProgram()
     
-    print ("Evaluate...")
-    ev=Evaluate(fClassified,fManual)
-    ev.evaluate()
-    print "End Results Evaluation ..."
+    
     
        
 if __name__ == '__main__':

@@ -10,6 +10,7 @@ import codecs
 import collections
 import re
 from subprocess import call
+import Parameters
 
 
 class Tokenizer:
@@ -17,17 +18,6 @@ class Tokenizer:
    
    pFile="Parameters/p-Tokenizer.txt"
    
-   def readParameters (self,pFile) :
-    """Read tokenization parameters"""
-    
-    fp = codecs.open(pFile, "r", "utf-8")
-    pDict={}
-    for lineSegment in fp:
-        lineSegment=lineSegment.rstrip()
-        if re.search ("\t",lineSegment) :
-            argument,value=lineSegment.split("\t")
-            pDict[argument]=value
-    return pDict
    
    def execute(self):
     """Execute the tokenization command"""
@@ -44,7 +34,7 @@ class Tokenizer:
     
     
    def __init__(self, inFile,outFile,mmtLang=None):
-      self.pDict = self.readParameters(Tokenizer.pFile)
+      self.pDict = Parameters.readParameters(Tokenizer.pFile)
       self.inFile = inFile
       self.outFile= outFile
       self.mmtLang=mmtLang
