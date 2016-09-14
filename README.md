@@ -32,9 +32,9 @@ The software you need before downloading TM Cleaner is:
 * Python 2.7.x or higher.
 * Java 8 or higher.
 * Scikit-learn 0.17.x or higher.
-* To work with *Bing* Translation engine you need an application identifier provided by Bing. For details see the tutorial [Bing](Documentation/Tutorial-Bing.pdf)  under Documentation folder.
-* If you want to work with *Hunalign* sentence aligner you need to download and install Hunalign. For details see the tutorial on working with Hunalign sentence aligner [Hunalign](Documentation/Tutorial-Hunalign.pdf) under Documentation folder.
-7.	If you want to work with *Fastalign* word aligner you need to download and install *MMT (Modern Machine Translation)* java application. For details see the tutorial on working with [Fastalign](Documentation/Tutorial-Fastalign.pdf) word aligner under Documentation folder.
+* To work with *Bing* Translation engine you need an application identifier provided by Bing. For details see the tutorial [Bing Documentation](Documentation/Tutorial-Bing.pdf)  under Documentation folder.
+* If you want to work with *Hunalign* sentence aligner you need to download and install Hunalign. For details see the tutorial on working with Hunalign sentence aligner [Hunalign Documentation](Documentation/Tutorial-Hunalign.pdf) under Documentation folder.
+7.	If you want to work with *Fastalign* word aligner you need to download and install *MMT (Modern Machine Translation)* java application. For details see the tutorial on working with [Fastalign Documentation](Documentation/Tutorial-Fastalign.pdf) word aligner under Documentation folder.
 
 ## Additional software used
 For language identification we use *Cybozu* [https://github.com/shuyo/language-detection/blob/wiki/ProjectHome.md] language identifier. The language identifier is used through a java program that is called from the main script. We have bundled with this distribution the language profiles used by Cybozu. 
