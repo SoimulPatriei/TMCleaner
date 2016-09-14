@@ -88,6 +88,6 @@ The development of this tool has been supported by the People Programme (Marie C
 The author of this tool would like to thank Anna Samiotou from TAUS for testing and suggestions.
 
 ## Contact 
-The author of this tool, Eduard Barbu, can be contacted at : tm.cleaner at yahoo dot com .
+The author of this tool, Eduard Barbu, can be contacted at : tm.cleaner at yahoo dot com 
 
 
