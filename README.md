@@ -21,7 +21,7 @@ TM Cleaner has been tested on *Linux* and *Mac OS X* for *Bing* and *Hunalign* m
 
   3. **Evaluate**
   
-  *python EvaluateExamples.py  classifiedFile.txt annotatedFile.txt* 
+  *python EvaluateExamples.py  --classified Evaluation/about-classified.txt --annotated Evaluation/about-manual.txt* 
 
  For details read the documentation corresponding to the three modalities. 
 
