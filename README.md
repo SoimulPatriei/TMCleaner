@@ -11,15 +11,15 @@ TM Cleaner allows you to train a model, to classify new data and to evaluate the
 TM Cleaner has been tested on *Linux* and *Mac OS X* for *Bing* and *Hunalign* modalities.  In *Fastalign* modality it only works on *Linux* because it relies *MMT (Modern Machine Translation)* distribution that only compiles on Linux.
 
 ## Usage
-  1. **Training**.
+  1. **Train**
   
   *python generateFeaturesAndClassify.py --features --config parameterFile.txt*
 
-  2. **Classify**.
+  2. **Classify**
   
   *python generateFeaturesAndClassify.py --classify --config parameterFile.txt* 
 
-  3. **Evaluate**.
+  3. **Evaluate**
   
   *python EvaluateExamples.py  classifiedFile.txt annotatedFile.txt* 
 
