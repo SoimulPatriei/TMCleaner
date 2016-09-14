@@ -1,4 +1,4 @@
-# TMCleaner
+# TM Cleaner
 **TM Cleaner** is software for identifying the wrong translation units (that contain segments that are not translation of each other) in translation memories or parallel corpora. 
 The identification of these TU is stated as a classification task: the software returns “1” if it thinks that the TU is correct and “0” otherwise. 
 **TM Cleaner** can work with any classification algorithm implemented in scikit-learn provided a connection to the algorithm is provided.  **TM Cleaner** needs training data to create its models. 
@@ -9,6 +9,22 @@ The identification of these TU is stated as a classification task: the software 
  
 TM Cleaner allows you to train a model, to classify new data and to evaluate the classifier performance. 
 TM Cleaner has been tested on *Linux* and *Mac OS X* for *Bing* and *Hunalign* modalities.  In *Fastalign* modality it only works on *Linux* because it relies *MMT (Modern Machine Translation)* distribution that only compiles on Linux.
+
+## Usage
+  1. **Training**.
+  
+  *python generateFeaturesAndClassify.py --features --config parameterFile.txt*
+
+  2. **Classify**.
+  
+  *python generateFeaturesAndClassify.py --classify --config parameterFile.txt* 
+
+  3. **Evaluate**.
+  
+  *python EvaluateExamples.py  classifiedFile.txt annotatedFile.txt* 
+
+ For details read the documentation corresponding to the three modalities. 
+
 ## Install
 * Checkout the python source code from this “github” repository.
 
@@ -62,12 +78,15 @@ Example of the previous file classified:
 ## Configuration files
 The configuration files are under the directory Parameters. For each modality (*Bing*, *Hunalign*, *Fastalign*) you will find a directory with the configuration files for training (“p-Training-XXX.txt”) and testing (“p-Batch-XXX.txt”). The parameters are commented in each file on lines starting with the symbol “#”. 
 
-## What Next
+## What's Next
 To see how to run the software in each modality read the corresponding tutorials in the Documentation directory.
 This introductory instructions are also available in [General Documentation](Documentation/General%20Documentation.pdf) 
 
 ## Acknowledgments 
 The development of this tool has been supported by the People Programme (Marie Curie Actions) of the European Unions Framework Programme (FP7/2007-2013) under REA grant agreement no. 317471.
+The author of this tool would like to thank Anna Samiotou from TAUS for testing and suggestions.
 
+## Contact 
+The author of this tool, Eduard Barbu, can be contacted at : tm.cleaner at yahoo dot com .
 
 
