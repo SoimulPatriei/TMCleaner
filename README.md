@@ -84,6 +84,7 @@ This introductory instructions are also available in [General Documentation](Doc
 
 ## Acknowledgments 
 The development of this tool has been supported by the People Programme (Marie Curie Actions) of the European Unions Framework Programme (FP7/2007-2013) under REA grant agreement no. 317471.
+
 The author of this tool would like to thank Anna Samiotou from TAUS for testing and suggestions.
 
 ## Contact 
