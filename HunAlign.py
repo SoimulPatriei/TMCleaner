@@ -37,7 +37,7 @@ class HunAlign:
     
     """Perform the Sentence Alignment with HunAlign"""
     
-    pHunDict=Parameters.readParameters ()
+    pHunDict=Parameters.readParameters (self.fHunParameters)
     pHunDict['fileS'],pHunDict['fileT'],self.pDict['fAlignment']=self.getAlignerFiles()
     self.pDict['fAlignment']=self.getFAPath(pHunDict)
     
