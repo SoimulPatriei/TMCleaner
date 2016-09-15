@@ -26,9 +26,10 @@ TM Cleaner has been tested on *Linux* and *Mac OS X* for *Bing* and *Hunalign* m
  For details read the documentation corresponding to the three modalities. 
 
 ## Install
-* Checkout the python source code from this “github” repository.
+Checkout the python source code from this “github” repository. The best way to do it is by cloning.
+* git clone https://github.com/SoimulPatriei/TMCleaner.git
 
-The software you need before downloading TM Cleaner is:
+The software you need before running TM Cleaner is:
 * Python 2.7.x or higher.
 * Java 8 or higher.
 * Scikit-learn 0.17.x or higher.
@@ -60,7 +61,7 @@ Example of a small file for English Italian language-pair:
 ## Output file
 The output will be created in a directory called “Classified” inside the input directory. 
 
-WARNING: at the next run the directory Classified will be deleted and recreated. Therefore, after a run, move the classified files somewhere else.
+WARNING: At the next run the directory Classified will be deleted and recreated. Therefore, after a run, move the classified files somewhere else.
 
 The format of the output file is the following:
   1.	Identifier_1 =as in the input
@@ -78,14 +79,14 @@ Example of the previous file classified:
 ## Configuration files
 The configuration files are under the directory Parameters. For each modality (*Bing*, *Hunalign*, *Fastalign*) you will find a directory with the configuration files for training (“p-Training-XXX.txt”) and testing (“p-Batch-XXX.txt”). The parameters are commented in each file on lines starting with the symbol “#”. 
 
-## What's Next
+## What's Next .
 To see how to run the software in each modality read the corresponding tutorials in the Documentation directory.
 This introductory instructions are also available in [General Documentation](Documentation/General%20Documentation.pdf) 
 
 ## Acknowledgments 
 The development of this tool has been supported by the People Programme (Marie Curie Actions) of the European Unions Framework Programme (FP7/2007-2013) under REA grant agreement no. 317471.
 
-The author of this tool would like to thank Anna Samiotou from TAUS for testing and suggestions.
+The author of this tool would like to thank Anna Samiotou from TAUS for testing and feedback.
 
 ## Contact 
 The author of this tool, Eduard Barbu, can be contacted at : tm.cleaner at yahoo dot com 
