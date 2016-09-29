@@ -97,6 +97,7 @@ The author of this tool, Eduard Barbu, can be contacted at : tm.cleaner at yahoo
 
 ## Academy
  If you use this software and you are from Academy, please cite this paper :
+ 
 Eduard Barbu. 2015. Spotting False Translation Segments in Translation Memories. In Proceedings of the Workshop Natural Language Processing for Translation Memories, pages 9–16, Hissar, Bulgaria, September 11. [https://www.aclweb.org/anthology/P/P16/P16-2047.pdf]
 
 
