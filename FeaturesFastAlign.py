@@ -21,12 +21,112 @@ import os
 from Tokenizer import Tokenizer
 from FastAlign import FastAlign
 from WordMappings import *
-import Parameters
+import logging
 
 
+class FeaturesFastAlignLine :
+    """Compute Features based on Fastalign alignments for one translation unit given as parameter."""
+    
+    def getFeatureNames(self):
+        """Get Computed features as first line of the file"""
+        defaultString="\t".join(["sWordRatio","tWordRatio","smaxOneZone","smaxZeroZone","tmaxOneZone","tmaxZeroZone",
+                     "sPositiveZoneRatio","sNegativeZoneRatio","tPositiveZoneRatio","tNegativeZoneRatio"])
+        return defaultString
+    
+    def getDefaultValues(self):
+        """Get Default Values of Features when no alignment can be performed"""
+        
+        nRepeat=len(self.getFeatureNames().split("\t"))
+        defValues="\t".join(["0.0"]*nRepeat)
+        return defValues
+    
+    def getAlignmentFeatures (self,sentenceAlignedLine,wordAlignedLine) :
+        """Get the alignment features"""
+        
+        wm=WordMappings(sentenceAlignedLine,wordAlignedLine)
+        
+        #--------Get The Mapping Dictionary-------
+        nbDict,wdMapSir=wm.getMappings()
+        strFeatures=""
+        if nbDict :
+            nSourceTokens,nTargetTokens=wm.getNTokens()
+            af=AlignFeatures(nSourceTokens,nTargetTokens,nbDict)
+            alignmentDict=af.getAlignmentFeatures()
+            for feature in alignmentDict:
+                value=round(alignmentDict[feature],2)
+                strFeatures+=str(value)+"\t"
+            strFeatures=strFeatures.rstrip()
+        else :
+            strFeatures=self.getDefaultValues()
+            
+        return strFeatures   
+        
+    
+    def printFeatures (self,featuresDict) :
+        """Print some features for testing"""
+        
+        fString=""
+        for feature in featuresDict :
+            fString+=feature+":"+str(featuresDict[feature])+"\t"
+        
+        fString=fString.rstrip()
+        print (fString)    
+        
+        
+    
+    def addFeatures(self,featuresDict):
+        """Add Fast Align Alignment Features to the Feature Dictionary """
+        
+        sSegment=self.argDict["sourceSegment"]
+        tSegment=self.argDict["targetSegment"]
+        
+        logging.debug("=========Tokenizer for source and target segments============")
+        sSegmentTokenized=self.argDict["tokenizerSource"].run(sSegment+"\n")
+        tSegmentTokenized=self.argDict["tokenizerSource"].run(tSegment+"\n")
+        logging.debug("SSeg Tokenized:"+sSegmentTokenized)
+        logging.debug("TSeg Tokenized:"+tSegmentTokenized)
+        logging.debug("=========End tokenizer============")
+        
+        tokString=sSegmentTokenized+" ||| "+tSegmentTokenized
+        logging.debug("=========Forward and Backward alignments============")
+        aForward=self.argDict["faForward"].run(tokString+"\n")
+        aBackward=self.argDict["faBackward"].run(tokString+"\n")
+        logging.debug("faForward:"+aForward)
+        logging.debug("faBackward:"+aBackward)
+        logging.debug("=========End forward and backward alignments============")
+        
+        logging.debug("=========Merge alignments============")
+        alignments=aForward+"@"+aBackward+"\n"
+        fAlignment=self.argDict["mergeLine"].run(alignments)
+        logging.debug("Final Alignment:"+fAlignment)
+        logging.debug("=========Alignments merged============")
+        
+        featureValues=self.getAlignmentFeatures (tokString,fAlignment)
+        featureNames=self.getFeatureNames()
+        #logging.debug("Feature Names:"+featureNames)
+        #logging.debug("Feature Values:"+featureValues)
+        
+        fValuesList=[float(i) for i in featureValues.split("\t")] 
+        fNamesList=featureNames.split("\t")
+        
+        for i, name in enumerate(fNamesList) :
+            featuresDict[name]=fValuesList[i]
+            
+        
+        #self.printFeatures(featuresDict)
+            
+        
+    
+    def __init__(self,argDict,pDict):
+        """Processes to run the tokenizer , fastalign with forward and backward models
+        and the merge program"""
+        
+        self.argDict=argDict
+        self.pDict = pDict
+     
 
 class FeaturesFastAlign:
-   """Compute Features based on Fast Align alignments."""
+   """Compute Features based on Fastalign alignments."""
    
    def getSentenceAlignedFile(self):
     """After Tokenization obtain the Fast Align File."""
@@ -74,7 +174,7 @@ class FeaturesFastAlign:
         
         commandList=["java" ,"-cp",self.pDict["javaClassPathSym"],self.pDict["javaClassSym"],self.pDict["fWordAlignmentForward"],
                      self.pDict["fWordAlignmentBackward"],self.pDict["fSentenceAlignment"],self.pDict["fWordAlignment"]]
-        print (" ".join(commandList))
+        logging.debug (" ".join(commandList))
         call(commandList)
    
    def runFastAlign(self):
@@ -83,7 +183,7 @@ class FeaturesFastAlign:
     self.getSentenceAlignedFile()
     self.pDict["fWordAlignment"]=re.sub("-sentenceAlignment.txt","-wordAlignment.txt",self.pDict["fSentenceAlignment"])
     self.alignForward()
-    print ("------------------------------------------------------------------------------------------------------------")
+    logging.debug ("------------------------------------------------------------------------------------------------------------")
     self.alignBackward()
     
         

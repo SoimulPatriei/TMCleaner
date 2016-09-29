@@ -12,8 +12,8 @@ trainingFeatureFile	Training/Fastalign/full-English-Italian-Features.csv
 fastalign	yes
 
 #------The Fast Align Model Files-----------
-faForwardModel	AlignmentModels/model-100mil.align.fwd.bin
-faBackwardModel	AlignmentModels/model-100mil.align.bwd.bin
+faForwardModel	AlignmentModels/europarl-fwd.bin
+faBackwardModel	AlignmentModels/europarl-bwd.bin
 
 #-------The symmetrization program for Fast Align-----------
 javaClassPathSym	Resources/merge.jar

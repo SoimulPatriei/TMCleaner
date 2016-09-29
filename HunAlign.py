@@ -13,11 +13,13 @@ from os.path import split ,join
 import Parameters
 
 
+
+
+
 class HunAlign:
    """Run HunAlign and add the HunAlign Features to the computed features"""
    
    fHunParameters="Parameters/p-HunAlign.txt"
-   
    
    def getAlignerFiles(self):
     """Get the Aligner Input Files: Source File and Target File."""
@@ -71,7 +73,6 @@ class HunAlign:
     fo = codecs.open(fAlignment, "w", "utf-8")
     arguments=[pHunDict["fileProgram"],pHunDict["fileDictionary"], pHunDict['fileS'],pHunDict['fileT']]
     runString=" ".join(arguments)
-    print (runString)
     call(arguments,stdout=fo)
     fo.close()
     
@@ -120,7 +121,7 @@ class HunAlign:
     
 def main():
    
-    pDict=Parameters.readParameters("Parameters/p-Training.txt")
+    pDict=readParameters("Parameters/p-Training.txt")
     pDict["segmentsFile"]="Training/full-English-Italian-Category-segments.txt"
     
     ha=HunAlign(pDict)

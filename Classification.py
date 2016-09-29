@@ -25,9 +25,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import storeFeatures
 import logging
 
-
-
-
+ 
 
 class Classification:
    """We run various classification algorithms. """

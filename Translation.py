@@ -21,7 +21,6 @@ import string
 from collections import Counter
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-import Parameters
 
 class Translate:
    """Use a Machine Translation engine to translate the source segment
@@ -34,7 +33,6 @@ class Translate:
     self.sLanguage=sLanguage
     self.tLanguage=tLanguage
     
-   
    def removePunctuation (self,segment) :
     """It removes the punctuation from a segment.
      In this way increases the probability of good similarity match."""
@@ -81,10 +79,10 @@ class Translate:
    def getSegmentSimilarity (self,sSegment,tSegment) :
     """It gets the cosine similarity between the translation of the source segment and the target segment"""
     
-    #logger = logging.getLogger('Translation::getSegmentSimilarity')
+    
     for sourceSegmentTranslated,e in self.getBingTranslation (sSegment):
         if e:
-            print "Got an exception %s" %e
+            logging.error( "Got a translation exception %s" %e)
             return 0,0
         else :
             sourceSegmentTranslated=unicode(sourceSegmentTranslated,"UTF-8")

@@ -14,6 +14,8 @@ import logging
 from HunAlign import *
 from FeaturesFastAlign import *
 from Translation import *
+from Dictionary import *
+import Parameters
 
 
 class GetFeatures:
@@ -90,6 +92,57 @@ class GetFeatures:
     
     return segment
    
+   
+   def generateFeaturesLine (self,lineSegment,pDict) :
+    """Generate the features for only a bisegment"""
+    
+    sLang=pDict["sourceLanguage"]
+    dLang=pDict["targetLanguage"]
+    featuresDict={}   
+    id1,id2,sourceSegment,targetSegment,detectedSLangs,detectedDLangs=lineSegment.split("@#@")
+    
+    sourceSegment=self.cleanSegment (sourceSegment)
+    targetSegment=self.cleanSegment(targetSegment)
+    features=Features(sourceSegment,targetSegment,pDict["fileRe"])
+    
+    #Church Gale score
+    featuresDict["cgscore"]=features.getCGSore()
+    featuresDict["same"]=features.isEqual ()
+    
+    #Capital Letters
+    featuresDict["hassourcecl"],featuresDict["hastargetcl"]=features.haveCL()
+    featuresDict["caplettersworddif"]=features.difWordsCapitalLetters ()
+    featuresDict["onlycaplettersdif"]=features.difWholeWordsCapitalLetters ()
+    
+    #Language Related Features: 0.0
+    featuresDict["langdif"]=features.getLangScore (detectedSLangs,detectedDLangs,sLang,dLang)
+    
+    #URL and Similarity
+    featuresDict["hassourceurl"],featuresDict["hastargeturl"]=features.haveItem("urlRe")
+    featuresDict["urlsim"]=round(features.getItemSimilarity("urlRe"),2)
+    
+    #TAG and Similarity
+    featuresDict["hassourcetag"],featuresDict["hastargettag"]=features.haveItem("tagRe")
+    featuresDict["tagsim"]=round(features.getItemSimilarity("tagRe"),2)
+    
+    #EMAIL and Similarity
+    featuresDict["hassourceemail"],featuresDict["hastargetemail"]=features.haveItem("emailRe")
+    featuresDict["emailsim"]=round(features.getItemSimilarity("emailRe"),2)
+    
+    #NUMBER and Similarity
+    featuresDict["hassourcenumber"],featuresDict["hastargetnumber"]=features.haveItem("numberRe")
+    featuresDict["numbersim"]=round(features.getNumberSimilarity("numberRe"),2)
+    
+    #PUNCTUATION and Similarity
+    featuresDict["hassourcepunctuation"],featuresDict["hastargetpunctuation"]=features.havePunctuation()
+    featuresDict["punctsim"]=round(features.getPunctuationSimilarity(),2)
+    
+    #Name Entity Detection and Similarity
+    featuresDict["hassourcenameentity"],featuresDict["hastargetnameentity"]=features.haveNameEntity()
+    featuresDict["nersimilarity"]=features.getNameEntitiesSimilarity()
+   
+    return featuresDict
+   
    def generateFeatures (self,pDict) :
     """It reads the bisegments from the file and computes the features for each of them"""
     
@@ -157,6 +210,7 @@ class GetFeatures:
         
     return segmentFeaturesDict
    
+   
    def generateTestFeatures(self,pBatch):
     """Generate Test Features"""
     
@@ -178,6 +232,11 @@ class GetFeatures:
         logger.info( "Add FastAlign Features")
         fa=FeaturesFastAlign(pBatch)
         fa.addFeatures(segmentFeaturesDict)
+    elif "dictionary" in pBatch and pBatch["dictionary"]=="yes" :
+        logger.info("Add (Probabilistic) Dictionary Features")
+        fTrDict=re.sub(".txt$","",pBatch["segmentsFile"])+"-dictionary.txt"
+        dct=Dictionary(pBatch["segmentsLangFile"],fTrDict,pBatch["dictionaryFile"])
+        dct.addFeatures(segmentFeaturesDict)     
        
 
     logger.info ("Store Model File  : "+pBatch["testFeatureFile"])
@@ -187,7 +246,6 @@ class GetFeatures:
         commandList=["java" ,"-cp",self.pDict["javaClassPath"],self.pDict["javaClass"],
                      self.pDict["segmentsFile"],self.pDict["sourceLanguage"],
                      self.pDict["targetLanguage"],self.pDict["langProfileDirectory"]]
-        print (" ".join(commandList))
         self.pDict["segmentsLangFile"]=self.pDict["segmentsFile"]+".lang.txt"
         call(commandList)
     
@@ -219,6 +277,14 @@ class GetFeatures:
         logger.info( "Add FastAlign Features")
         fa=FeaturesFastAlign(self.pDict)
         fa.addFeatures(segmentFeaturesDict)
+        
+    elif "dictionary" in self.pDict and self.pDict["dictionary"]=="yes" :
+        logger.info("Add (Probabilistic) Dictionary Features")
+        fTrDict=re.sub(".txt$","",self.pDict["fCategory"])+"-dictionary.txt"
+        dct=Dictionary(self.pDict["segmentsFile"],fTrDict,self.pDict["dictionaryFile"])
+        dct.addFeatures(segmentFeaturesDict)
+        
+        
         
     logger.info( "Add the category for the Training Set")
     self.addCategory(segmentFeaturesDict)

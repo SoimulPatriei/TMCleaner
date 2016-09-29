@@ -14,8 +14,8 @@ fastalign	yes
 
 
 #------The Fast Align Model Files-----------
-faForwardModel	AlignmentModels/model-100mil.align.fwd.bin
-faBackwardModel	AlignmentModels/model-100mil.align.bwd.bin
+faForwardModel	AlignmentModels/europarl-fwd.bin
+faBackwardModel	AlignmentModels/europarl-bwd.bin
 
 #-------The merge program used to merge forward and backward Fast Align -----------
 javaClassPathSym	Resources/merge.jar

@@ -221,10 +221,6 @@ class WordMappings:
 
 
 
-def debugAlignment():
-    """It debugs an alignment."""
-
-
  
    
 def main():

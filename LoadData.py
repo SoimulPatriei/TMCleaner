@@ -20,7 +20,8 @@ class LoadData():
       self.argumentsDict = argumentsDict
       self.feature_training_names=""
      
-      
+    
+  
     def removeIndexes (self,row,listIndex) :
         "Remove the elements at the indexes. First sort the indexes to be sure you delete them correctly"
         

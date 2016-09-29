@@ -26,12 +26,6 @@ import Parameters
 
 
 
-#print "Store the Model in the database ."
-#fileCommand="insertindb/table-full.txt"
-#tableName="enitfull"
-#storeFeatures.insertRecords (segmentFeaturesDict,fileCommand,tableName)
-
-
 def initLogger(loggingFile):
     """Init the logger for the console and logging file"""
     
@@ -59,7 +53,7 @@ def getLanguageForSegmentFile (pDict) :
     commandList=["java" ,"-cp",pDict["javaClassPath"],pDict["javaClass"],
                  pDict["segmentsFile"],pDict["sourceLanguage"],
                  pDict["targetLanguage"],pDict["langProfileDirectory"]]
-    print (" ".join(commandList))
+    logging.info (" ".join(commandList))
     pDict["segmentsLangFile"]=pDict["segmentsFile"]+".lang.txt"
     call(commandList)
 
@@ -101,8 +95,7 @@ def makeDirectories(pBatch):
         os.makedirs(pBatch["dirTranslation"])
         
      
-        
-        
+            
 def moveFiles (pBatch,testFPath) :
     """Move the classified file and delete the intermediary files """
     
@@ -148,8 +141,6 @@ def fireRules(components,pBatch):
     
     return False,"",""  
     
-
-
  
 def applyRules (pBatch) :
     """Apply extra rules before the Machine Learning Algorithm
@@ -232,6 +223,8 @@ def getFunction(mlalgorithm,pDict):
     
     return options[mlalgorithm]
 
+
+
 def classifyInBatch(fPBatch,withRules,mlalgorithm):
     """Classify the files found in directory in one by one.
        It can be specified if you use the extra rules or not. """
@@ -273,9 +266,6 @@ def classifyInBatch(fPBatch,withRules,mlalgorithm):
         logging.info("Move everything in the Classified directory.")    
         moveFiles (pBatch,testFPath)
         
-
-        
-
 def getAlgorithm(mlalgorithm):
     """Treat the machine learning algorithm provided"""
     
@@ -288,7 +278,7 @@ def getAlgorithm(mlalgorithm):
             sys.exit("Unknown algorithm or algorithm not implemented")
     else :
         return "SVM"
-    
+
 def treatRules(rules):
     """Treat the rules """
     
@@ -297,9 +287,7 @@ def treatRules(rules):
     else :
         return "yes"
 
-
-    
-    
+ 
 def executeProgram():
     """Parse the arguments of the program using argparse and execute the program ..."""
     
@@ -315,7 +303,7 @@ def executeProgram():
     
     args = parser.parse_args()
     
-    #Training with aligners: HunAlign or FastAlign or Translation Similarity Score.
+    
     if args.features and args.config :
         loggingFile="train.log"
         initLogger(loggingFile)
