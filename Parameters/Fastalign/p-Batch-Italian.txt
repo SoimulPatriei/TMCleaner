@@ -3,6 +3,7 @@ sourceLanguage	en
 targetLanguage	it
 
 #---------------The directory where the files to be classified stay---------------
+#dirTest	TestFiles
 dirTest	TestFiles
 
 #--------The Trained Model---------------------
@@ -20,6 +21,7 @@ faBackwardModel	AlignmentModels/europarl-bwd.bin
 #-------The merge program used to merge forward and backward Fast Align -----------
 javaClassPathSym	Resources/merge.jar
 javaClassSym	symmetrization.mmt.fastalign.MergeAlignments
+javaClassSymLine	symmetrization.mmt.fastalign.MergeAlignmentsLine
 
 
 #--------Classification Parameters--------
@@ -38,10 +40,10 @@ range	-1,1
 #If you want to use scaling to range, fix that parameter to 1 and varianceScaling to 0
 varianceScaling	1
 
-#The java resources needed for Cybozu Based Language Identification
+#The java resources needed for Cybozu Based Language Identification.
 javaClassPath	Resources/idLanguage.jar
 javaClass	test.translated.net.TestDetectQueryLanguage
-
+javaClassLine	test.translated.net.DetectLanguageString
 
 #The directory where the language profiles for Cybozu are stored
 #Nota bene: for the tutorial we use the language profiles trained on Tweeter so that the short segments 
