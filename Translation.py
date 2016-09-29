@@ -21,6 +21,7 @@ import string
 from collections import Counter
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import Parameters
 
 class Translate:
    """Use a Machine Translation engine to translate the source segment
