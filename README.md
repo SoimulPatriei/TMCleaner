@@ -1,3 +1,7 @@
+
+#  New:  TM  Cleaner as a web service.
+TM  Cleaner can be now used as a web  service . Read the  [Web Service Documentation](Documentation/Tutorial-WebService.pdf) to see how.
+
 # TM Cleaner
 **TM Cleaner** is software for identifying the wrong translation units (that contain segments that are not translation of each other) in translation memories or parallel corpora. 
 The identification of these TU is stated as a classification task: the software returns “1” if it thinks that the TU is correct and “0” otherwise. 
