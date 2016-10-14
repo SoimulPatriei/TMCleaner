@@ -1,5 +1,5 @@
 
-#  New:  TM  Cleaner as a web service.
+#  News
 TM  Cleaner can be now used as a web  service . Read the  [Web Service Documentation](Documentation/Tutorial-WebService.pdf) to see how.
 
 # TM Cleaner
@@ -83,7 +83,7 @@ Example of the previous file classified:
 ## Configuration files
 The configuration files are under the directory Parameters. For each modality (*Bing*, *Hunalign*, *Fastalign*) you will find a directory with the configuration files for training (“p-Training-XXX.txt”) and testing (“p-Batch-XXX.txt”). The parameters are commented in each file on lines starting with the symbol “#”. 
 
-## What's Next .
+## What's Next
 To see how to run the software in each modality read the corresponding tutorials in the Documentation directory.
 This introductory instructions are also available in [General Documentation](Documentation/General%20Documentation.pdf) 
 
