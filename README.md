@@ -12,7 +12,7 @@ The identification of these TU is stated as a classification task: the software 
  3. *Fastalign*. It computes various features based on the word alignments in the source and target segments.
  
 TM Cleaner allows you to train a model, to classify new data and to evaluate the classifier performance. 
-TM Cleaner has been tested on *Linux* and *Mac OS X* for *Bing* and *Hunalign* modalities.  In *Fastalign* modality it only works on *Linux* because it relies *MMT (Modern Machine Translation)* distribution that only compiles on Linux.
+TM Cleaner has been tested on *Linux* and *Mac OS X* for *Bing* and *Hunalign* modalities.  In *Fastalign* modality it only works on *Linux Ubuntu* because it relies *MMT (Modern Machine Translation)* distribution that only compiles on Linux.
 
 ## Usage
   1. **Train**
