@@ -1,6 +1,33 @@
 
+
 #  News
+The last incarnation of TM  Cleaner (under TMCleaner-MMT-API) is now integrated with the last version of MMT(1.0.2)  [https://github.com/ModernMT/MMT/releases]. It means that the word alignment and tokenization is delegated to MMT.
+As before, TMCleaner-MMT-API can be used standalone or as a web service.
+
+. **Train mode standalone**
+  
+  *python generateFeaturesAndClassify.py --features --config Parameters/Fastalign/p-Training-Italian.txt*
+  
+   **Test mode standalone**
+  
+  *python generateFeaturesAndClassify.py --classify --config Parameters/Fastalign/p-Test-Italian.txt --mlalgorithm LogisticRegression*
+  
+  **Web Service**
+  
+  Launch web service
+  
+  *python classifyOneByOne-Server.py --config Parameters/Fastalign/p-Test-Italian.txt --port 9090* 
+  
+  Interogate web service (where (64.81.80.214) is the machine where the service run and 9090 is the port and "filetest.txt") a test file. 
+  
+  *python clientSegments-json.py 64.81.80.214 9090 filetest.txt*
+
+
+#  Web Service
 TM  Cleaner can be now used as a web  service . Read the  [Web Service Documentation](Documentation/Tutorial-WebService.pdf) to see how.
+1. **Train **
+  
+  *python generateFeaturesAndClassify.py --features --config parameterFile.txt*
 
 # TM Cleaner
 **TM Cleaner** is software for identifying the wrong translation units (that contain segments that are not translation of each other) in translation memories or parallel corpora. 
