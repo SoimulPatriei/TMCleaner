@@ -4,7 +4,7 @@
 The last incarnation of TM  Cleaner (under TMCleaner-MMT-API) is now integrated with the last version of MMT(1.0.2)  [https://github.com/ModernMT/MMT/releases]. It means that the word alignment and tokenization is delegated to MMT.
 As before, TMCleaner-MMT-API can be used standalone or as a web service.
 
-. **Train mode standalone**
+ **Train mode standalone**
   
   *python generateFeaturesAndClassify.py --features --config Parameters/Fastalign/p-Training-Italian.txt*
   
@@ -18,7 +18,7 @@ As before, TMCleaner-MMT-API can be used standalone or as a web service.
   
   *python classifyOneByOne-Server.py --config Parameters/Fastalign/p-Test-Italian.txt --port 9090* 
   
-  Interogate web service (where (64.81.80.214) is the machine where the service run and 9090 is the port and "filetest.txt") a test file. 
+  Interogate web service ((64.81.80.214) is the machine where the service runs, 9090 is the port and "filetest.txt" a test file with source and target segments. 
   
   *python clientSegments-json.py 64.81.80.214 9090 filetest.txt*
 
