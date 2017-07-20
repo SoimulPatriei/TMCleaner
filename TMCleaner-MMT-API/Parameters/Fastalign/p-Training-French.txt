@@ -1,0 +1,22 @@
+#Source and Target segment languages
+sourceLanguage	en
+targetLanguage	fr
+
+#Training File with Category
+fCategory	Training/Fastalign/MixedWeb-English-French-Category.txt
+
+#Output File containing the trained model
+trainingFeatureFile	Training/Fastalign/MixedWeb-English-French-Category.csv
+
+#The java resources needed for Cybozu Based Language Identification
+javaClassPath	Resources/idLanguage.jar
+javaClass	test.translated.net.TestDetectQueryLanguage
+
+#The directory where the language profiles for Cybozu are stored
+#Nota bene: for the tutorial we use the language profiles trained on Tweeter so that the short segments 
+#language codes are identified accurately
+langProfileDirectory	Resources/profiles.sm
+
+#A file containing regular expressions used to compute various features.
+fileRe	Resources/regularExpressions.txt
+

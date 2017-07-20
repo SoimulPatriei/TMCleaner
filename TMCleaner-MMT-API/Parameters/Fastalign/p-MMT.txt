@@ -1,0 +1,2 @@
+#The endpoint to query
+endpoint	http://54.224.205.89:9091/tagsprojection

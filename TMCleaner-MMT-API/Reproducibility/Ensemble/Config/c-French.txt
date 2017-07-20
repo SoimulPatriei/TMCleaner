@@ -1,0 +1,10 @@
+trainingFile	Training/English-French.csv
+testFile	Test/English-French.csv
+
+featuresEliminate	dbkey,category,nwordssource,nwordstarget
+category	category
+
+varianceScaling	1
+
+scaleToRange	0
+range	-1,1

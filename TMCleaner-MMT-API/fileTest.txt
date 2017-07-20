@@ -1,0 +1,62 @@
+0@#@0@#@craft@#@Imbarcazione
+1@#@1@#@lean mixture@#@miscela povera (di combustibile)
+2@#@2@#@Pala del Mistero della Croce (Mystery of the Cross Altar-Piece)@#@Pala del Mistero della Croce
+3@#@3@#@Pala del Mistero della Croce (Mystery of the Cross Altar-Piece)@#@Pala del Mistero della Croce
+4@#@4@#@HOS@#@Sindrome di Holt-Oram
+5@#@5@#@Based upon Elphinstone et al., 1996@#@Elphinstone et al., 1996)
+6@#@6@#@identify sites at risk, based upon:@#@sull’identificazione dei siti che presentano un rischio, sulla base:
+7@#@7@#@mt.@#@megatone
+8@#@8@#@quite@#@abbastanza (alquanto)
+9@#@9@#@sliding layer@#@rivestimento antifrizione
+10@#@10@#@layer@#@gallina ovaiola
+11@#@11@#@FDIC@#@Federal Deposit Insurance Corporation
+12@#@12@#@lending@#@attività di prestito
+13@#@13@#@lending rate@#@tasso di interesse debitore
+14@#@14@#@blunt@#@chiaro, schietto,
+15@#@15@#@Eider@#@Edredone (Somateria mollissima)
+16@#@16@#@eider down@#@piumino di oca d'Islanda
+17@#@17@#@Are the efficiency-boosting measures going according to plan, and what economic benefits have they already yielded?@#@Ciò premesso, può la Commissione far sapere se tali progetti di miglioramento della gestione procedono secondo i piani, e sotto quale profilo essi hanno eventualmente già comportato risparmi economici?
+18@#@18@#@staining@#@Colorazione di superficie
+19@#@19@#@withdraw@#@ritirare dalla circolazione
+20@#@20@#@OAK@#@Atrofia ottica di tipo Kjer
+21@#@21@#@pecan@#@Albero di pecan
+22@#@22@#@flare@#@macchia di riflessione; alone
+23@#@23@#@Cheating in video games@#@Cheat
+24@#@24@#@DESCRIPTION OF DUTIES INHERENT IN MANAGEMENT AND CONTROL SYSTEMS@#@DESCRIZIONE DEI COMPITI INERENTI AI SISTEMI DI GESTIONE E CONTROLLO
+25@#@25@#@CHANGES IN MANAGEMENT AND CONTROL SYSTEMS@#@MODIFICHE DEI SISTEMI DI GESTIONE E DI CONTROLLO
+26@#@26@#@barrier-free@#@accessibile ai portatori di handicap
+27@#@27@#@socket@#@presa; portalampada
+28@#@28@#@bin@#@cesto per pellicola
+29@#@29@#@motor driven welding set@#@gruppo convertitore rotante per saldatura
+30@#@30@#@NIH SUP@#@Finanziamento governativo USA, N.I.H.
+31@#@31@#@SUP PHS@#@Finanziamento governativo USA, P.H.S.
+32@#@32@#@dies a quo@#@giorno di inizio del termine
+33@#@33@#@antenuptial settlement in trust@#@regime dotale
+34@#@34@#@bullet@#@rimborso in un'unica soluzione alla scadenza
+35@#@35@#@timp@#@Inibitori tissutali delle metalloproteinasi
+36@#@36@#@TIMP 01@#@Inibitore tissutale della metalloproteasi-1
+37@#@37@#@curb@#@barbazzale
+38@#@38@#@top curb@#@trincarino della campana
+39@#@39@#@curb lane@#@corsia separata con cordolo
+40@#@40@#@toenail@#@Unghie delle dita dei piedi
+41@#@41@#@toenail removal@#@Asportazione di unghia del piede
+42@#@42@#@low noise.@#@Basso livello di rumore
+43@#@43@#@tag@#@braccialetto elettronico
+44@#@44@#@tag@#@contrassegno
+45@#@45@#@tag@#@contrassegnare
+46@#@46@#@low noise.@#@Basso livello di rumore
+47@#@47@#@export data@#@dati relativi alle esportazioni
+48@#@48@#@5.2 USB & LOCAL BACKUP FILE PLAYBACK@#@5.2 RIPRODUZIONE FILE BACKUP USB & LOCALE
+49@#@49@#@RS/6000 7007 Notebook Workstation Model N40@#@RS/6000 7007 Notebook Workstation Modello N40
+50@#@50@#@KIT OF MATERIAL FOR “CE” STANDARD MANAGEMENT@#@KIT MATERIALE PER GESTIONE NORME "CE"
+51@#@51@#@Mobile application@#@App
+52@#@52@#@DNS@#@Melanoma cutaneo (maligno)
+53@#@53@#@to remove the stalks from the fruit@#@depicciolare
+54@#@54@#@KARAOKE ONE: NEW APP AND COLLABORATION WITH X FACTOR@#@KARAOKE ONE: NUOVA APP E COLLABORAZIONE CON X FACTOR
+55@#@55@#@Today or Later (Bytebau) New App for BlackBerry 10@#@Today or Later (Bytebau) Nuova App per BlackBerry 10
+56@#@56@#@FILL IN AS MUCH INFORMATION AS POSSIBLE@#@FORNIRE IL MAGGIOR NUMERO POSSIBILE DI INFORMAZIONI
+57@#@57@#@Wlan@#@Wireless Local Area Network
+58@#@58@#@Job Description@#@Job description - Descrizione delle Mansioni
+59@#@59@#@host@#@organismo ospitante
+60@#@60@#@encryption@#@trasformazione crittografica
+61@#@61@#@file transfer services,@#@servizi per il trasferimento di documenti (file);
