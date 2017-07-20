@@ -376,8 +376,8 @@ class HomeController():
         
 
 def start_server(port,pFile):
+    
     argDict,pDict=initResources (pFile)
-    #initResourcesTest(pFile)
     hc=HomeController(argDict,pDict)
     cherrypy.tree.mount(hc, '/')
     cherrypy.config.update({'error_page.404': error_page_404})
